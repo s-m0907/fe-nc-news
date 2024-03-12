@@ -75,7 +75,7 @@ button {
   flex-grow: 1;
 }
 
-.card-top {
+.top-line {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -157,4 +157,34 @@ button {
   color: #444;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.comment-card {
+  color: #444;
+  background-color: #f4eeee;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 25px;
+  row-gap: 4px;
+  padding: 16px;
+}
+
+.comment-list {
+  color: #444;
+  margin: 20px;
+}
+
+.comment-list h6 {
+font-size: 1.4rem;
+margin-bottom: 20px;
+}
+
+.comment-list p {
+  margin: 2px;
+  line-height: 1.5;
+}
+
+.user-post {
+  font-weight: bold;
 }
