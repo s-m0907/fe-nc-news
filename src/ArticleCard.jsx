@@ -7,7 +7,7 @@ const ArticleCard = ({article}) => {
     <div className="article-card">
 <img src={article.article_img_url}></img>
 <div className="card-text">
-<div className='card-top'><p>{article.author}</p><TopicTag topic = {article.topic}/></div>
+<div className='top-line'><p className='user-post'><i className="fa-solid fa-user"></i> {article.author}</p><TopicTag topic = {article.topic}/></div>
 <h2>{article.title}</h2>
 <div className="article-actions">
     <VoteButton votes = {article.votes}/>

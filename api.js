@@ -19,3 +19,11 @@ export const fetchArticle = (article_id) => {
         return response.data.article
     })
 }
+
+export const fetchComments = (article_id) => {
+    return ncNewsApi
+    .get(`/articles/${article_id}/comments?limit=40`)
+    .then((response) => {
+        return response.data.comments
+    })
+}
