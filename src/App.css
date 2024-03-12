@@ -9,15 +9,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 10px;
+  padding: 2px;
   margin-top: -8px;
   margin-left: -8px;
+  margin-right: -8px;
 }
 
 h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+}
+
+h3,
+h4 {
+  margin: 0%;
+}
+
+button {
+  margin: 2px;
 }
 
 .icon::before {
@@ -54,20 +64,21 @@ h1 {
   border-radius: 4px;
   padding: 5px;
   width: 200px;
+  height: auto;
   border: solid 5px white;
   margin-bottom: 2px;
 }
 
 .card-text {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .topic-tag {
@@ -76,10 +87,8 @@ h1 {
   border: solid black 2px;
   border-radius: 5px;
   padding: 3px;
-}
-
-button {
-  margin: 2px;
+  height: 30px;
+  font-weight: bold;
 }
 
 .dropbtn {
@@ -122,5 +131,30 @@ button {
 }
 
 .dropdown:hover .dropbtn {
-color: #97a09a;
+  color: #97a09a;
+}
+
+.single-article {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.single-article img {
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  max-width: max-content;
+}
+
+.single-article p {
+  line-height: 1.8;
+}
+
+.loading {
+  padding: 10px;
+  color: #444;
+  font-size: 1.2rem;
+  text-align: center;
 }
