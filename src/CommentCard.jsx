@@ -1,5 +1,5 @@
 import { convertTimestampToDate, timeSince } from "../utils/timeSince"
-import VoteButton from "./VoteButton"
+import CommentVoteButton from "./CommentVoteButton"
 
 const CommentCard = ({comment}) => {
     const date = convertTimestampToDate(comment.created_at)
@@ -7,7 +7,7 @@ const CommentCard = ({comment}) => {
     return (<div className = 'comment-card'>
     <div className='top-line'><p className='user-post'><i className="fa-solid fa-user"></i> {comment.author}</p><p>{commentAge}</p></div>
     <p>{comment.body}</p>
-    <VoteButton votes = {comment.votes}/>
+    <CommentVoteButton votes = {comment.votes}/>
     </div>)
 }
 

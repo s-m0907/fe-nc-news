@@ -20,7 +20,7 @@ const SingleArticle = () => {
 if(isLoading) return <Loading/>
 else{
    return<>
-   <SingleArticleCard article = {singleArticle}/>
+   <SingleArticleCard article = {singleArticle} setSingleArticle = {setSingleArticle}/>
    <CommentList article_id = { article_id }/>
    </> 
 } 
