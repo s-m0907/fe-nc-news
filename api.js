@@ -33,6 +33,19 @@ export const patchVotes = (article_id) => {
     return ncNewsApi
     .patch(`/articles/${article_id}`, patchBody)
     .then((response) => {
-        return (response)
+        return response
+    })
+}
+
+export const postComment = (user, newComment, article_id) => {
+    const postBody = {
+        username: user,
+        body: newComment
+    }
+    console.log(postBody, article_id)
+    return ncNewsApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then((response) => {
+        return response.data.comment
     })
 }

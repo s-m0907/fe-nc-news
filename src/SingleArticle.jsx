@@ -4,6 +4,7 @@ import { fetchArticle } from '../api'
 import Loading from './Loading'
 import SingleArticleCard from './SingleArticleCard'
 import CommentList from './CommentList'
+import CommentForm from './CommentForm'
 
 const SingleArticle = () => {
     const { article_id } = useParams()
@@ -22,7 +23,7 @@ else{
    return<>
    <SingleArticleCard article = {singleArticle} setSingleArticle = {setSingleArticle}/>
    <CommentList article_id = { article_id }/>
-   </> 
+   </>
 } 
 }
 
