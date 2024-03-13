@@ -1,6 +1,6 @@
-import VoteButton from './VoteButton'
 import CommentButton from './CommentButton'
 import TopicTag from './TopicTag'
+import VoteButton from './VoteButton'
 
 const SingleArticleCard = ({article}) => {
 const date = article.created_at.slice(0, 10)
@@ -13,7 +13,7 @@ const date = article.created_at.slice(0, 10)
     <h4>{date}</h4>
     <p className='article-body'>{article.body}</p>
     <div className="article-actions">
-    <VoteButton votes = {article.votes}/>
+    <VoteButton article_id = {article.article_id} votes= {article.votes} />
     <CommentButton comments = {article.comment_count}/>
     </div>
     </div>
