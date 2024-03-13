@@ -4,7 +4,7 @@ const Nav = () => {
 
   return (
     <div className="dropdown">
-      <button className="dropbtn"><i className="fa-solid fa-bars"></i></button>
+      <div className="dropbtn"><i className="fa-solid fa-bars"></i></div>
       <div className="dropdown-content">
         <Link to = "/articles"> Articles </Link>
         <Link to = "/profile"> Profile </Link>

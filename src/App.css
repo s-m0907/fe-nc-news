@@ -9,6 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  align-content: center;
   padding: 2px;
   margin-top: -8px;
   margin-left: -8px;
@@ -28,6 +29,31 @@ h4 {
 
 button {
   margin: 2px;
+}
+
+.nav-user{
+  color: white;
+}
+.nav-icon{
+  max-width:40px;
+}
+
+.user-card{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+border: solid black 4px;
+max-width: 100%;
+row-gap: 6px;
+align-items: start;
+color: #BF4F74;
+margin: 40px;
+padding: 30px;
+border-radius: 30px;
+}
+
+.user-card img {
+  width: 200px;
 }
 
 .icon::before {
@@ -175,7 +201,7 @@ button {
   margin: 20px;
 }
 
-.comment-list h6 {
+.comment-list h4 {
 font-size: 1.4rem;
 margin-bottom: 20px;
 }
