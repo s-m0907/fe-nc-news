@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { fetchArticles } from '../api'
 import ArticleCard from './ArticleCard'
 import Loading from './Loading'
@@ -6,10 +7,11 @@ import Loading from './Loading'
 const ArticleList = ({user}) => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const { topic } = useParams()
     
     useEffect(() => {
         setIsLoading(true)
-        fetchArticles().then((articles) => {
+        fetchArticles(topic).then((articles) => {
             if(user){
                 const userArticles = articles.filter((article) => article.author === user)
                 setArticles(userArticles)
@@ -18,7 +20,7 @@ const ArticleList = ({user}) => {
             }
             setIsLoading(false)
         })
-    }, [])
+    }, [topic])
 
     if(isLoading) return <Loading/>
     else {

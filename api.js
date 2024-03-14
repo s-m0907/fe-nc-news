@@ -4,9 +4,17 @@ const ncNewsApi = axios.create({
     baseURL: 'https://nc-news-ydib.onrender.com/api'
 })
 
-export const fetchArticles = () => {
+export const fetchTopics = () => {
+return ncNewsApi
+.get('/topics')
+.then((response) => {
+    return response.data.topics
+})
+}
+
+export const fetchArticles = (topic) => {
     return ncNewsApi
-    .get('/articles?limit=40')
+    .get(`/articles`, {params: {topic: topic}})
     .then((response) => {
         return response.data.articles
     })
