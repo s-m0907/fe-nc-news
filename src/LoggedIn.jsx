@@ -8,13 +8,14 @@ const linkStyle = {
     display: "flex",
     flexDirection: "row",
     columnGap: "8px",
-    alignItems: "center"
+    alignItems: "center",
+    fontWeight: "bold"
 }
 
 const LoggedIn = ({loggedInUser}) => {
     return <>
     <Link to = "/profile" style={linkStyle}>
-    <i className="fa-regular fa-user fa-2xl"/>{loggedInUser.username}
+    <i className="fa-regular fa-user fa-xl"/>{loggedInUser.username}
     </Link>
     </>
 }

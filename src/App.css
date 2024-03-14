@@ -22,6 +22,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+margin-top: 0;
+}
+
 h3,
 h4 {
   margin: 0%;
@@ -42,6 +46,7 @@ button {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+position: relative;
 border: solid black 4px;
 max-width: 100%;
 row-gap: 6px;
