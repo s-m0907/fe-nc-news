@@ -6,6 +6,7 @@ import Loading from './Loading'
 import SortBy from './SortBy'
 import OrderBy from './OrderBy'
 import styled from 'styled-components'
+import ErrorComponent from './ErrorComponent'
 
 const SortWrapper = styled.div`
 display: flex;
@@ -15,6 +16,7 @@ align-items: baseline;
 `
 
 const ArticleList = ({user}) => {
+    const [error, setError] = useState(null)
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const { topic } = useParams()
@@ -38,10 +40,17 @@ const ArticleList = ({user}) => {
                 setArticles(articles)
             }
             setIsLoading(false)
+        }).catch((err) => {
+            setError({err})
         })
-    }, [topic,sortByQuery, orderQuery])
+    }, [topic, sortByQuery, orderQuery])
+if(error) {
+    console.log(error)
+    return <ErrorComponent error={error.err.response} />
+}
 return <>
-    <SortWrapper><SortBy/><OrderBy setSortOrder = {setSortOrder}/>
+    <SortWrapper>
+        <SortBy/><OrderBy setSortOrder = {setSortOrder}/>
         </SortWrapper>
     <div className = "article-list">
         {isLoading ? <Loading/> : articles.map((article) =><ArticleCard key={article.article_id} article={article}/>)}

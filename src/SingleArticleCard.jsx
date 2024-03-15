@@ -6,7 +6,7 @@ const SingleArticleCard = ({article}) => {
 const date = article.created_at.slice(0, 10)
 
     return <div className='single-article'>
-        <img src={article.article_img_url}></img>
+        <img src={article.article_img_url} alt=""></img>
         <TopicTag topic={article.topic}/>
     <h2>{article.title}</h2>
     <h3>Written by {article.author}</h3>
