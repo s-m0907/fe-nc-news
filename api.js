@@ -12,9 +12,9 @@ return ncNewsApi
 })
 }
 
-export const fetchArticles = (topic) => {
+export const fetchArticles = (topic, sortBy, order) => {
     return ncNewsApi
-    .get(`/articles`, {params: {topic: topic}})
+    .get(`/articles?limit=40`, {params: {topic: topic, sort_by: sortBy, order: order}})
     .then((response) => {
         return response.data.articles
     })
@@ -50,7 +50,6 @@ export const postComment = (user, newComment, article_id) => {
         username: user,
         body: newComment
     }
-    console.log(postBody, article_id)
     return ncNewsApi
     .post(`/articles/${article_id}/comments`, postBody)
     .then((response) => {

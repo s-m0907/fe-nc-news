@@ -1,17 +1,36 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { fetchArticles } from '../api'
 import ArticleCard from './ArticleCard'
 import Loading from './Loading'
+import SortBy from './SortBy'
+import OrderBy from './OrderBy'
+import styled from 'styled-components'
+
+const SortWrapper = styled.div`
+display: flex;
+flex-direction: row;
+column-gap: 10px;
+align-items: baseline;
+`
 
 const ArticleList = ({user}) => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const { topic } = useParams()
-    
+    const [searchParams, setSearchParams] = useSearchParams()
+    const sortByQuery = searchParams.get("sort_by")
+    const orderQuery = searchParams.get("order")
+
+    const setSortOrder = (direction) => {
+        const newParams = new URLSearchParams(searchParams)
+        newParams.set('order', direction)
+        setSearchParams(newParams)
+    }
+
     useEffect(() => {
         setIsLoading(true)
-        fetchArticles(topic).then((articles) => {
+        fetchArticles(topic,sortByQuery, orderQuery).then((articles) => {
             if(user){
                 const userArticles = articles.filter((article) => article.author === user)
                 setArticles(userArticles)
@@ -20,14 +39,15 @@ const ArticleList = ({user}) => {
             }
             setIsLoading(false)
         })
-    }, [topic])
-
-    if(isLoading) return <Loading/>
-    else {
-return <div className = "article-list">
-    {articles.map((article) =><ArticleCard key={article.article_id} article={article}/>)}
+    }, [topic,sortByQuery, orderQuery])
+return <>
+    <SortWrapper><SortBy/><OrderBy setSortOrder = {setSortOrder}/>
+        </SortWrapper>
+    <div className = "article-list">
+        {isLoading ? <Loading/> : articles.map((article) =><ArticleCard key={article.article_id} article={article}/>)}
     </div>
-    }
+</>
+
 }
 
 export default ArticleList

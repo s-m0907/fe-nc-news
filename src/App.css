@@ -83,6 +83,11 @@ border-radius: 30px;
   padding: 3px;
   height: 30px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.topic-tag:hover {
+background-color: rgb(182, 171, 171);
 }
 
 .dropbtn {
@@ -181,4 +186,49 @@ margin-bottom: 20px;
 
 .user-post {
   font-weight: bold;
+}
+
+.sortbtn {
+  margin-top: 15px;;
+  background-color: #BF4F74;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+}
+
+.sort-dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.sort-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.sort-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.sort-content a:hover {background-color: #f1f1f1}
+
+
+.sort-dropdown:hover .sort-content {
+  display: block;
+}
+
+
+.sort-dropdown:hover .sortbtn {
+  background-color: #c95a7f;
 }
