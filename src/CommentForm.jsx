@@ -43,6 +43,9 @@ const CommentForm = ({setComments}) => {
         }).catch(() => {
             alert('Error: could not post comment. Please try again.')
         })
+        setTimeout(() => {
+            setPostSuccess(false)
+        }, 5000)
         console.log('submitted')
     }
 

@@ -5,7 +5,7 @@ import CommentCard from './CommentCard'
 import Loading from "./Loading"
 import CommentForm from "./CommentForm"
 
-const CommentList = ({article_id, newComment}) => {
+const CommentList = ({article_id}) => {
 const [comments, setComments] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 

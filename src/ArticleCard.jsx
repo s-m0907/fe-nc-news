@@ -3,6 +3,7 @@ import VoteButton from "./VoteButton"
 import TopicTag from "./TopicTag"
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
+import { convertTimestampToDate, timeSince } from "../utils/timeSince";
 
 const linkStyle = {
     margin: "0",
@@ -63,6 +64,8 @@ justify-content: space-between;
 `
 
 const ArticleCard = ({article}) => {
+    const articleDate = convertTimestampToDate(article.created_at)
+    const articleAge = timeSince(articleDate)
     return (
 <Wrapper>
 <Tag><TopicTag topic = {article.topic}/></Tag>
@@ -72,6 +75,7 @@ const ArticleCard = ({article}) => {
             <CardText>
                 <User><p className='user-post'><i className="fa-solid fa-user"></i> {article.author}</p></User>
                 <h2>{article.title}</h2>
+                <p>{articleAge}</p>
             </CardText>
         </FlexBox>
     </Link>
