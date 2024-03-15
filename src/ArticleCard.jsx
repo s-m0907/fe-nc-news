@@ -71,7 +71,7 @@ const ArticleCard = ({article}) => {
 <Tag><TopicTag topic = {article.topic}/></Tag>
     <Link to={`/article/${article.article_id}`} style={linkStyle} key={article.article_id}>
         <FlexBox>
-            <CardImg src={article.article_img_url}/>
+            <CardImg src={article.article_img_url} alt=""/>
             <CardText>
                 <User><p className='user-post'><i className="fa-solid fa-user"></i> {article.author}</p></User>
                 <h2>{article.title}</h2>
