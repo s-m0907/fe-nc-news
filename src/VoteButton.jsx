@@ -10,6 +10,7 @@ const likedStyle = {
 const VoteButton = ({article_id, votes}) => {
    const [voteCount, setVoteCount] = useState(votes)
    const [style, setStyle] = useState({})
+   const [isVoted, setIsVoted] = useState(false)
 
    const upVote = (article_id) => {
   patchVotes(article_id).catch((err) => {
@@ -19,17 +20,22 @@ const VoteButton = ({article_id, votes}) => {
 }
 
 const handleClick = () => {
-   console.log('clicked')
-   return upVote(article_id)
-}
+   if (!isVoted) {
+      upVote(article_id);
+      setVoteCount(voteCount + 1);
+   } else {
+      setVoteCount(voteCount - 1);
+   }
+   setIsVoted(!isVoted);
+};
 
    return <button
    onClick = {() => {
-      setVoteCount(voteCount+1)
       handleClick();
-      setStyle(likedStyle)
+      
    }} style = {style}>
-      <i className="fa-solid fa-heart"></i> {voteCount}</button>
+      <i className={isVoted ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> {voteCount}
+      </button>
 }
 
 export default VoteButton
