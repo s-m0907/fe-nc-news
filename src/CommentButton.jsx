@@ -1,5 +1,5 @@
 const CommentButton = ({comments}) => {
-return <button> <i className="fa-solid fa-comment"></i> {comments}</button>
+return <button> <i className="fa-regular fa-comment"></i> {comments}</button>
 }
 
 export default CommentButton
