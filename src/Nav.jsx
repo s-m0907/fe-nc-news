@@ -9,6 +9,11 @@ const linkStyle = {
   borderBottom: "2px solid gray"
 }
 
+const postStyle = {
+  backgroundColor: "#f2c6d5",
+  fontWeight: "bold"
+}
+
 const Nav = () => {
 const [topics, setTopics] = useState([])
 
@@ -29,6 +34,7 @@ useEffect(() => {
               {topic.slug[0].toUpperCase()}{topic.slug.slice(1)}
             </Link>)})}
         <Link to = "/profile"> Profile </Link>
+        <Link to ="/create-post" style={postStyle}>Create a post</Link>
       </div>
     </div>
   );

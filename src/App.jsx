@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 import Profile from './Profile.jsx'
 import ErrorPage from './ErrorPage.jsx'
 import { useDarkMode } from '../contexts/DarkMode.jsx'
+import ArticleForm from './ArticleForm.jsx'
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -36,6 +37,7 @@ function App() {
     <Route path = '/articles' element={<ArticleList/>}/>
     <Route path = '/articles/:topic' element={<ArticleList/>}/>
     <Route path = '/article/:article_id' element={<SingleArticle/>}/>
+    <Route path = '/create-post' element={<ArticleForm/>}/>
     <Route path = '/profile' element={<Profile/>}/>
   </Routes>
     </UserContext.Provider>

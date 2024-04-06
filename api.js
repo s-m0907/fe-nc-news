@@ -73,3 +73,18 @@ export const patchCommentVotes = (comment_id, votes) => {
         return response
     })
 }
+
+export const postArticle = (post) => {
+    const postBody = post
+    return ncNewsApi.post('/articles', postBody)
+    .then((response) => {
+        return response
+    })
+}
+
+export const deleteArticle = (article_id) => {
+    return ncNewsApi.delete(`/articles/${article_id}`)
+    .then((response) => {
+        return response
+    })
+}

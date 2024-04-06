@@ -7,6 +7,7 @@ import SortBy from './SortBy'
 import OrderBy from './OrderBy'
 import styled from 'styled-components'
 import ErrorComponent from './ErrorComponent'
+import DeleteArticle from './DeleteArticle'
 
 const SortWrapper = styled.div`
 display: flex;
@@ -52,9 +53,15 @@ return <>
     <SortWrapper>
         <SortBy/><OrderBy setSortOrder = {setSortOrder}/>
         </SortWrapper>
-    <div className = "article-list">
-        {isLoading ? <Loading/> : articles.map((article) =><ArticleCard key={article.article_id} article={article}/>)}
-    </div>
+        <div className="article-list">
+  {isLoading ? (
+    <Loading />
+  ) : (
+    articles.map((article) => (
+      <ArticleCard key={article.article_id} article={article} />
+    ))
+  )}
+</div>
 </>
 
 }

@@ -17,13 +17,21 @@ useEffect(() => {
     })
 }, [])
 
-if(isLoading) return <Loading/>
-    else {
-return <div className= 'comment-list'>
-<CommentForm setComments = {setComments}></CommentForm>
-<h4>Comments</h4>
-{comments.map((comment) => <CommentCard key = {comment.comment_id} comment = {comment}/>)}
-</div>}
+return (
+    <div className='comment-list'>
+      <CommentForm setComments={setComments} />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <h4>Comments</h4>
+          {comments.map((comment) => (
+            <CommentCard key={comment.comment_id} comment={comment} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default CommentList
