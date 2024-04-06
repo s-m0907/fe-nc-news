@@ -20,13 +20,10 @@ function DarkModeToggle() {
     }, []);
 
     return (
-        <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
-            <label className="switch">
+            <label>
                 <span>{`${darkMode ? 'Light Mode' : 'Dark Mode'}`}</span>
                 <input className ="toggle" type="checkbox" id="toggle" checked={darkMode} onChange={toggleDarkMode} />
-                <span className="slider round"></span>
             </label>
-        </div>
     );
 }
 export default DarkModeToggle

@@ -5,11 +5,14 @@ import styled, {css} from "styled-components";
 import { Link } from 'react-router-dom'
 import { convertTimestampToDate, timeSince } from "../utils/timeSince";
 import { useDarkMode } from '../contexts/DarkMode.jsx'
+import DeleteArticle from "./DeleteArticle.jsx";
+import { useState, useContext } from "react" 
+import UserContext from "../contexts/User.jsx";
 
 const LinkStyle = styled(Link)`
   margin: 0;
   text-decoration: none;
-  color: black; /* Default text color */
+  color: black;
 
   ${props =>
     props.darkMode &&
@@ -76,11 +79,23 @@ flex-direction: row;
 justify-content: space-between;
 `
 
+const MessageText = styled.p`
+font-weight: bold;
+color: #BF4F74;
+`
+
 const ArticleCard = ({article}) => {
+  const [isDeleted, setIsDeleted] = useState(false)
     const articleDate = convertTimestampToDate(article.created_at)
     const articleAge = timeSince(articleDate)
     const { darkMode } = useDarkMode()
+    const { loggedInUser } = useContext(UserContext)
 
+    if(isDeleted) {
+      return <div>
+          <MessageText><i className="fa-regular fa-square-minus"></i> Article Deleted</MessageText>
+          </div>
+  } else {
     return (
 <ArticleWrapper darkMode={darkMode}>
 <Tag><TopicTag topic = {article.topic}/></Tag>
@@ -97,8 +112,11 @@ const ArticleCard = ({article}) => {
 <Actions>
 <VoteButton article_id = {article.article_id} votes = {article.votes}/>
 <Link to={`/article/${article.article_id}`}><CommentButton comments = {article.comment_count}/></Link>
+{ loggedInUser.username === article.author ? <DeleteArticle article_id={article.article_id} setIsDeleted={setIsDeleted}/> : <></>
+}
     </Actions>
     </ArticleWrapper>
 )}
+}
 
 export default ArticleCard
