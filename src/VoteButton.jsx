@@ -9,7 +9,6 @@ const likedStyle = {
 
 const VoteButton = ({article_id, votes}) => {
    const [voteCount, setVoteCount] = useState(votes)
-   const [style, setStyle] = useState({})
    const [isVoted, setIsVoted] = useState(false)
 
    const upVote = (article_id) => {
@@ -33,7 +32,7 @@ const handleClick = () => {
    onClick = {() => {
       handleClick();
       
-   }} style = {style}>
+   }}>
       <i className={isVoted ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> {voteCount}
       </button>
 }

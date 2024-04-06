@@ -28,7 +28,7 @@ const CommentCard = ({comment}) => {
         return <div className = 'comment-card'>
     <div className='top-line'><p className='user-post'><i className="fa-solid fa-user"></i> {comment.author}</p><p>{commentAge}</p></div>
     <p>{comment.body}</p>
-    <Wrapper><CommentVoteButton votes = {comment.votes}/>
+    <Wrapper><CommentVoteButton votes = {comment.votes} comment = {comment}/>
     {comment.author === loggedInUser.username ? <DeleteButton comment_id = {comment.comment_id} setIsDeleted = {setIsDeleted}/> : <p></p>}
     </Wrapper></div>
     }
