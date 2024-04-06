@@ -29,7 +29,6 @@ useEffect(() => {
               {topic.slug[0].toUpperCase()}{topic.slug.slice(1)}
             </Link>)})}
         <Link to = "/profile"> Profile </Link>
-        <Link to = "/settings"> Settings </Link>
       </div>
     </div>
   );
