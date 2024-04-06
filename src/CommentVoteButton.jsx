@@ -5,8 +5,6 @@ const CommentVoteButton = ({votes, comment}) => {
    const[voteCount, setVoteCount] = useState(votes)
    const[isVoted, setIsVoted] = useState(false)
 
-   console.log(comment)
-
    const comment_id = comment.comment_id
 
    const upVote = (comment_id) => {
