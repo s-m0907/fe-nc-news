@@ -29,7 +29,9 @@ if(isLoading) return <Loading/>
 else{
    return<>
    <SingleArticleCard article = {singleArticle} setSingleArticle = {setSingleArticle}/>
+   <div id="comments">
    <CommentList article_id = { article_id }/>
+   </div>
    </>
 } 
 }

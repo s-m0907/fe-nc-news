@@ -81,7 +81,7 @@ const ArticleCard = ({article}) => {
     </Link>
 <Actions>
 <VoteButton article_id = {article.article_id} votes = {article.votes}/>
-<CommentButton comments = {article.comment_count}/>
+<Link to={`/article/${article.article_id}`}><CommentButton comments = {article.comment_count}/></Link>
     </Actions>
     </Wrapper>
 )}
