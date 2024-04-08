@@ -12,10 +12,11 @@ import { useDarkMode } from '../contexts/DarkMode.jsx'
 import ArticleForm from './ArticleForm.jsx'
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({
-    username: 'jessjelly',
-    name: 'jess',
-    avatar_url: 'user_2102633.png'
+  const [loggedInUser, setLoggedInUser] = useState( {
+    username: 'weegembump',
+    name: 'Gemma Bump',
+    avatar_url:
+      'https://vignette.wikia.nocookie.net/mrmen/images/7/7e/MrMen-Bump.png/revision/latest?cb=20180123225553'
   })
 
   const { darkMode } = useDarkMode()

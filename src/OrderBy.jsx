@@ -10,11 +10,11 @@ const linkStyle= {
     color: "#BF4F74"
 }
 
-const OrderBy = ({setSortOrder}) => {
+const OrderBy = ({setOrder}) => {
 
 return <Wrapper>
-<div onClick={() => {setSortOrder('desc')}} style={linkStyle}><i className="fa-solid fa-arrow-down-wide-short fa-xl"></i></div>   
-<div onClick={() => {setSortOrder('asc')}} style={linkStyle}><i className="fa-solid fa-arrow-up-short-wide fa-xl"></i></div>
+<div onClick={() => {setOrder('desc')}} style={linkStyle}><i className="fa-solid fa-arrow-down-wide-short fa-xl"></i></div>   
+<div onClick={() => {setOrder('asc')}} style={linkStyle}><i className="fa-solid fa-arrow-up-short-wide fa-xl"></i></div>
 </Wrapper>
 }
 

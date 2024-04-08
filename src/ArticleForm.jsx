@@ -4,12 +4,19 @@ import styled from 'styled-components'
 import { useForm } from "react-hook-form"
 import { useState, useEffect } from "react";
 import { fetchTopics, postArticle } from "../api";
+import AddTopic from "./AddTopic";
 
 const FormContainer = styled.form`
   max-width: 400px;
   margin: auto;
   padding-top: 20px;
 `;
+
+const TopicWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+` 
 
 const FormGroup = styled.div`
   margin-bottom: 20px;
@@ -37,10 +44,12 @@ const BodyInput = styled.textarea`
 `;
 
 const Select = styled.select`
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: fit-content;
+  width: 30%;
+  height:40px;
+  margin-right: 10px;
 `;
 
 const ErrorMessage = styled.span`
@@ -71,20 +80,24 @@ const SubmitButton = styled.button`
     const [topics, setTopics] = useState([])
     const { loggedInUser } = useContext(UserContext)
     const [isSuccess, setIsSuccess] = useState(false)
+    const [newTopic, setNewTopic] = useState('')
     const {
         register,
         handleSubmit,
         watch,
+        reset,
         formState: { errors },
       } = useForm()
       
     
       const onSubmit = (data) => {
         data.author = loggedInUser.username;
+        console.log(data)
         postArticle(data)
             .then((response) => {
                 console.log('Article posted successfully:', response);
                 setIsSuccess(true)
+                reset()
             })
             .catch((error) => {
                 console.error('Error posting article:', error);
@@ -95,12 +108,23 @@ const SubmitButton = styled.button`
         fetchTopics().then((result)=> {
             setTopics(result)
         })
-      }, [])
+      }, [newTopic])
     
       return (
         
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <h3>Create a post:</h3>
+        <FormGroup>
+          <TopicWrapper>
+          <Label htmlFor="topic"></Label>
+          <Select id="topic" {...register("topic", { required: true })}>
+            {topics.map((topic) => (
+              <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
+            ))}
+          </Select>
+          <AddTopic setNewTopic={setNewTopic}/>
+          </TopicWrapper>
+        </FormGroup>
         <FormGroup>
           <Label htmlFor="title"></Label>
           <Input id="title" placeholder="Title" {...register("title", { required: true })} />
@@ -112,18 +136,9 @@ const SubmitButton = styled.button`
           <BodyInput id="body" placeholder="Text" {...register("body", { required: true })} />
           {errors.body && <ErrorMessage>This field is required</ErrorMessage>}
         </FormGroup>
-  
-        <FormGroup>
-          <Label htmlFor="topic"></Label>
-          <Select id="topic" {...register("topic", { required: true })}>
-            {topics.map((topic) => (
-              <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
-            ))}
-          </Select>
-        </FormGroup>
         <FormGroup>
           <Label htmlFor="article_image_url"></Label>
-          <Input id="article_image_url" type="url" {...register("article_image_url")} placeholder="Image URL" />
+          <Input id="article_img_url" type="url" {...register("article_img_url")} placeholder="Image URL" />
         </FormGroup>
         {isSuccess && <SuccessMessage>Article posted!</SuccessMessage>}
   

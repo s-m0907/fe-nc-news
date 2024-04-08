@@ -13,8 +13,8 @@ useEffect(() => {
     setIsLoading(true)
     fetchComments(article_id).then((comments) => {
         setComments(comments)
-        setIsLoading(false)
-    })
+      })
+      setIsLoading(false)
 }, [])
 
 return (
@@ -24,7 +24,7 @@ return (
         <Loading />
       ) : (
         <div>
-          <h4>Comments</h4>
+          {comments.length === 0 ? <h4>No Comments Yet</h4> : <h4>Comments</h4>}          
           {comments.map((comment) => (
             <CommentCard key={comment.comment_id} comment={comment} />
           ))}

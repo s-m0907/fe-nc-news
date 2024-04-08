@@ -30,7 +30,7 @@ const DeleteArticle = ({article_id, setIsDeleted}) => {
     } else {
       return (
         <Button type="button" id="deleteComment" onClick={handleClick} disabled={isDisabled}>
-          <i className="fa-solid fa-trash" /> Delete
+          <i className="fa-solid fa-trash" />
         </Button>
       );
     };
