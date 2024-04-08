@@ -7,7 +7,7 @@ const CommentButton = ({comments}) => {
     }
 }
 
-return <button onClick={handleCommentButtonClick}> <i className="fa-regular fa-comment"></i> {comments}</button>
+return <button onClick={handleCommentButtonClick}> <i className="fa-regular fa-comment"></i> {comments} Comments</button>
 }
 
 export default CommentButton

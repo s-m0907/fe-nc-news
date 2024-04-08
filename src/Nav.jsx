@@ -31,7 +31,7 @@ useEffect(() => {
         {topics.map((topic) => {
           return (
             <Link key={topic.slug} to={`/articles/${topic.slug}`} value={topic.slug} style={linkStyle}>
-              {topic.slug[0].toUpperCase()}{topic.slug.slice(1)}
+              {topic.slug[0].toUpperCase() + topic.slug.slice(1)}
             </Link>)})}
         <Link to = "/profile"> Profile </Link>
         <Link to ="/create-post" style={postStyle}>Create a post</Link>

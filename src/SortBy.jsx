@@ -1,17 +1,34 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import styled from "styled-components"
 
-const SortBy = () => {
-  const [currSort, setCurrSort] = useState('Date')
+const Sort = styled.div`
+padding: 10px;
+cursor: pointer
+`
+const Heading = styled.div`
+padding: 10px;
+font-weight: bold;
+`
+
+const SortBy = ({setSort, setCurrSort, currSort}) => {
+
+
+  const handleClick = (sort, text) => {
+    
+    setCurrSort(text)
+    setSort(sort)
+  }
 
   return (
     <div className='sort-dropdown'>
       <div className='sortbtn'> {currSort} <i className="fa-solid fa-circle-chevron-down"></i></div>
       <div className='sort-content'>
-        <Link to= '/articles?sort_by=created_at' onClick={() => setCurrSort('Date')}> Date </Link>
-        <Link to='/articles?sort_by=votes' onClick={() => setCurrSort('Likes')}> Likes </Link>
-        <Link to='/articles?sort_by=comment_count' onClick={() => setCurrSort('Comments')}> Comments </Link>
-      </div>
+          <Heading>Sort by</Heading>
+          <Sort value='created_at' onClick={() => handleClick('created_at', 'Date')}> Date </Sort>
+          <Sort value='votes' onClick={() => handleClick('votes', 'Votes')}> Votes </Sort>
+          <Sort value='comment_count' onClick={() => handleClick('comment_count', 'Comments')}> Comments </Sort>
+        </div>
     </div>
   );
 }

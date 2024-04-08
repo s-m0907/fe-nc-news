@@ -4,6 +4,7 @@ import styled, {css} from "styled-components"
 import DarkModeToggle from "./ToggleDarkModeButton"
 import { Link } from "react-router-dom"
 import { useDarkMode } from '../contexts/DarkMode.jsx'
+import CircularImageFrame from "../ImageCircle.jsx"
 
 const UserWrapper = styled.div`
 display: flex;
@@ -26,9 +27,6 @@ ${props =>
     `}
 `
 
-const UserImg = styled.img`
-width: 200px;
-`
 const SignOut = styled.button`
 position: absolute;
 bottom: 0;
@@ -58,7 +56,7 @@ const UserCard = () => {
 
 return <UserWrapper darkMode={darkMode}>
     <UserDetails>
-<UserImg src={loggedInUser.avatar_url} alt="Profile picture for logged in user"></UserImg>
+<CircularImageFrame src={loggedInUser.avatar_url} alt="Profile picture for logged in user" size={200} />
 <h2>{loggedInUser.username}</h2>
     </UserDetails>
 <Settings>
