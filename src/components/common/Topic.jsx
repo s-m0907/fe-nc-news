@@ -23,10 +23,12 @@ const TopicDescription = styled.p`
 `;
 
 const Topic = ({ topic }) => {
+  if(topic) {
  return <TopicWrapper>
     <TopicTitle>{topic.charAt(0).toUpperCase() + topic.slice(1)}</TopicTitle>
     <TopicDescription>{topic.description}</TopicDescription>
   </TopicWrapper>
+  }
 };
 
 export default Topic;
