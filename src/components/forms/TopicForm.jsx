@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import { useState } from 'react';
 import { postTopic } from '../../services/api';
+import { useDarkMode } from '../../../contexts/DarkMode.jsx'
 
 const Form = styled.form`
   label {
@@ -49,7 +50,7 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +62,13 @@ const ModalContent = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+  ${props =>
+    props.darkMode &&
+    css`
+      color: whitesmoke;
+      background-color: #1f1f1f
+    `}
 `;
 
 const ModalText = styled.p`
@@ -80,6 +88,7 @@ cursor: pointer;
 `
 
 const TopicForm = ({setIsOpen, setNewTopic})=> {
+  const { darkMode } = useDarkMode()
   const [formData, setFormData] = useState({
     slug: '',
     description: '',
@@ -123,7 +132,7 @@ const TopicForm = ({setIsOpen, setNewTopic})=> {
   
 
 return <ModalOverlay>
-        <ModalContent>
+        <ModalContent darkMode={darkMode}>
         <CloseButton onClick={handleClose}><i className="fa-solid fa-xmark"></i></CloseButton>
           <ModalText>Create a new topic</ModalText>
           <Divider></Divider>
