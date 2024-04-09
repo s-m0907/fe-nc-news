@@ -1,6 +1,6 @@
-import UserCard from "./UserCard"
-import ArticleList from "./ArticleList"
-import UserContext from "../contexts/User"
+import UserCard from "../ui/UserCard"
+import ArticleList from "../../containers/ArticleList"
+import UserContext from "../../../contexts/User"
 import { useContext } from "react"
 
 const Profile =  () => {

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { fetchTopics } from '../api';
+import { fetchTopics } from '../../services/api';
 import styled from 'styled-components';
 
 const linkStyle = {

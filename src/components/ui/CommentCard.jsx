@@ -1,9 +1,9 @@
 import { useContext, useState } from "react"
-import { convertTimestampToDate, timeSince } from "../utils/timeSince"
-import CommentVoteButton from "./CommentVoteButton"
-import UserContext from "../contexts/User"
+import { convertTimestampToDate, timeSince } from "../../services/utils"
+import CommentVoteButton from "../common/CommentVoteButton"
+import UserContext from "../../../contexts/User"
 import styled from "styled-components"
-import DeleteButton from "./DeleteButton"
+import DeleteButton from "../common/DeleteButton"
 
 const Wrapper = styled.div`
 display: flex;

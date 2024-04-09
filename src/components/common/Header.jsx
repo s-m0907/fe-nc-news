@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
-import UserContext from "../contexts/User";
+import UserContext from "../../../contexts/User";
 import styled from "styled-components";
 import LoggedIn from "./LoggedIn";
 import Nav from "./Nav";
@@ -21,7 +21,6 @@ const SearchContainer = styled.div`
     margin-right: 15px;
     `
 
-// Styled component for the search bar input
 const SearchInput = styled.input`
     flex-grow: 1;
     padding: 8px 30px 8px 10px;

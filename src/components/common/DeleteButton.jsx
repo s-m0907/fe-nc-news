@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { deleteComment } from "../api";
+import { deleteComment } from "../../services/api";
 import { useState } from "react";
 
 const Button = styled.button`

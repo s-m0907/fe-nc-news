@@ -1,13 +1,13 @@
-import CommentButton from "./CommentButton"
-import VoteButton from "./VoteButton"
-import TopicTag from "./TopicTag"
+import CommentButton from "../common/CommentButton.jsx"
+import VoteButton from "../common/VoteButton.jsx"
+import TopicTag from "../common/TopicTag.jsx"
 import styled, {css} from "styled-components";
 import { Link } from 'react-router-dom'
-import { convertTimestampToDate, timeSince } from "../utils/timeSince";
-import { useDarkMode } from '../contexts/DarkMode.jsx'
-import DeleteArticle from "./DeleteArticle.jsx";
+import { convertTimestampToDate, timeSince } from "../../services/utils.js";
+import { useDarkMode } from '../../../contexts/DarkMode.jsx'
+import DeleteArticle from "../common/DeleteArticle.jsx";
 import { useState, useContext } from "react" 
-import UserContext from "../contexts/User.jsx";
+import UserContext from "../../../contexts/User.jsx";
 
 const LinkStyle = styled(Link)`
   margin: 0;

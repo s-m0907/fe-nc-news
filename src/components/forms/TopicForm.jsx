@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react';
-import { postTopic } from '../api';
+import { postTopic } from '../../services/api';
 
 const Form = styled.form`
   label {

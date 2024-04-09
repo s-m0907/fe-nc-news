@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { patchVotes } from "../api"
+import { patchVotes } from "../../services/api"
 import styled from "styled-components"
 
 const likedStyle = {

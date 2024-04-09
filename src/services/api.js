@@ -76,7 +76,6 @@ export const patchCommentVotes = (comment_id, votes) => {
 
 export const postArticle = (post) => {
     const postBody = post
-    console.log(post)
     return ncNewsApi.post('/articles', postBody)
     .then((response) => {
         return response

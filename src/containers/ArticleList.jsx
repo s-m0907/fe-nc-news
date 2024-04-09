@@ -1,13 +1,13 @@
+import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
-import { fetchArticles } from '../api'
-import ArticleCard from './ArticleCard'
-import Loading from './Loading'
-import SortBy from './SortBy'
-import OrderBy from './OrderBy'
-import styled from 'styled-components'
-import ErrorComponent from './ErrorComponent'
-import Topic from './Topic'
+import { fetchArticles } from '../services/api'
+import ArticleCard from '../components/ui/ArticleCard'
+import Loading from '../components/common/Loading'
+import SortBy from '../components/common/SortBy'
+import OrderBy from '../components/common/OrderBy'
+import ErrorComponent from '../components/ui/ErrorComponent'
+import Topic from '../components/common/Topic'
 
 const SortWrapper = styled.div`
 display: flex;
@@ -79,7 +79,7 @@ return (
         <SortBy setSort={setSort} currSort={currSort} setCurrSort={setCurrSort}/>
         <OrderBy setOrder={setOrder} />
         {isTopic && <Topic topic={topic} />}
-      </SortWrapper>
+      </SortWrapper> 
       <div className="article-list">
         {isLoading ? (
           <Loading />

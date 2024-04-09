@@ -1,6 +1,6 @@
-import CommentButton from './CommentButton'
-import TopicTag from './TopicTag'
-import VoteButton from './VoteButton'
+import CommentButton from '../common/CommentButton'
+import TopicTag from '../common/TopicTag'
+import VoteButton from '../common/VoteButton'
 
 const SingleArticleCard = ({article}) => {
 const date = article.created_at.slice(0, 10)

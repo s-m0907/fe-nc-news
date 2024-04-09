@@ -1,15 +1,15 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom'
-import ArticleList from './ArticleList.jsx'
-import Header from './Header.jsx' 
-import Home from './Home'
-import SingleArticle from './SingleArticle.jsx'
+import Feed from './components/pages/Feed.jsx'
+import Header from './components/common/Header.jsx' 
+import Home from './components/pages/Home.jsx'
+import SingleArticle from './components/pages/SingleArticle.jsx'
 import UserContext from '../contexts/User.jsx'
 import { useState, useEffect } from 'react'
-import Profile from './Profile.jsx'
-import ErrorPage from './ErrorPage.jsx'
+import Profile from './components/pages/Profile.jsx'
+import ErrorPage from './components/pages/ErrorPage.jsx'
 import { useDarkMode } from '../contexts/DarkMode.jsx'
-import ArticleForm from './ArticleForm.jsx'
+import ArticleForm from './components/forms/ArticleForm.jsx'
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState( {
@@ -35,8 +35,8 @@ function App() {
   <Routes>
     <Route path="*" element={<ErrorPage/>} />
     <Route path = '/' element = {<Home/>}/>
-    <Route path = '/articles' element={<ArticleList/>}/>
-    <Route path = '/articles/:topic' element={<ArticleList/>}/>
+    <Route path = '/articles' element={<Feed/>}/>
+    <Route path = '/articles/:topic' element={<Feed/>}/>
     <Route path = '/article/:article_id' element={<SingleArticle/>}/>
     <Route path = '/create-post' element={<ArticleForm/>}/>
     <Route path = '/profile' element={<Profile/>}/>

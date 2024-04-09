@@ -1,4 +1,4 @@
-import ErrorComponent from "./ErrorComponent"
+import ErrorComponent from "../ui/ErrorComponent"
 
 
 const ErrorPage = () => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react';
-import TopicForm from './TopicForm';
+import TopicForm from '../forms/TopicForm';
 
 const Add = styled.button`
 border: none;
