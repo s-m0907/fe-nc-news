@@ -1,4 +1,4 @@
-import { patchCommentVotes } from "../api"
+import { patchCommentVotes } from '../../services/api'
 import { useState } from 'react'
 
 const CommentVoteButton = ({votes, comment}) => {

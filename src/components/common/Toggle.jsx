@@ -1,4 +1,4 @@
-import { useDarkMode } from "../contexts/DarkMode";
+import { useDarkMode } from "../../../contexts/DarkMode";
 import { useEffect } from 'react'
 
 function DarkModeToggle() {

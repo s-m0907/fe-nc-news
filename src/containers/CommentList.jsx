@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { fetchComments } from '../api'
-import CommentCard from './CommentCard'
-import Loading from "./Loading"
-import CommentForm from "./CommentForm"
+import { fetchComments } from '../services/api'
+import CommentCard from '../components/ui/CommentCard'
+import Loading from "../components/common/Loading"
+import CommentForm from "../components/forms/CommentForm"
 
 const CommentList = ({article_id}) => {
 const [comments, setComments] = useState([])

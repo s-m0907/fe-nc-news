@@ -1,4 +1,4 @@
-import ArticleList from './ArticleList'
+import ArticleList from "../../containers/ArticleList"
 const Feed = () => {
 return <>
 <ArticleList/>

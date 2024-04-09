@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useState } from 'react';
-import { postComment } from '../api';
-import UserContext from '../contexts/User';
+import { postComment } from '../../services/api';
+import UserContext from '../../../contexts/User';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 

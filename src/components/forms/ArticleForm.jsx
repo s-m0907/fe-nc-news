@@ -1,10 +1,10 @@
 import { useContext } from "react"
-import UserContext from "../contexts/User"
+import UserContext from "../../../contexts/User"
 import styled from 'styled-components'
 import { useForm } from "react-hook-form"
 import { useState, useEffect } from "react";
-import { fetchTopics, postArticle } from "../api";
-import AddTopic from "./AddTopic";
+import { fetchTopics, postArticle } from "../../services/api";
+import AddTopic from "../common/AddTopic";
 
 const FormContainer = styled.form`
   max-width: 400px;
@@ -92,7 +92,6 @@ const SubmitButton = styled.button`
     
       const onSubmit = (data) => {
         data.author = loggedInUser.username;
-        console.log(data)
         postArticle(data)
             .then((response) => {
                 console.log('Article posted successfully:', response);

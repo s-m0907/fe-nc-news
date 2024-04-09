@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { fetchArticle } from '../api'
-import Loading from './Loading'
-import SingleArticleCard from './SingleArticleCard'
-import CommentList from './CommentList'
-import CommentForm from './CommentForm'
-import ErrorComponent from './ErrorComponent'
+import { fetchArticle } from '../../services/api'
+import Loading from '../common/Loading'
+import SingleArticleCard from '../ui/SingleArticleCard'
+import CommentList from '../../containers/CommentList'
+import CommentForm from '../forms/CommentForm'
+import ErrorComponent from '../ui/ErrorComponent'
 
 const SingleArticle = () => {
     const { article_id } = useParams()

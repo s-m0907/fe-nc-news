@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
 import styled from "styled-components"
 
 const Sort = styled.div`
@@ -12,7 +10,6 @@ font-weight: bold;
 `
 
 const SortBy = ({setSort, setCurrSort, currSort}) => {
-
 
   const handleClick = (sort, text) => {
     

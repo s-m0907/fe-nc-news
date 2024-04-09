@@ -1,10 +1,10 @@
-import UserContext from "../contexts/User"
+import UserContext from "../../../contexts/User.jsx"
 import { useContext } from "react"
 import styled, {css} from "styled-components"
-import DarkModeToggle from "./ToggleDarkModeButton"
+import DarkModeToggle from "../common/Toggle.jsx"
 import { Link } from "react-router-dom"
-import { useDarkMode } from '../contexts/DarkMode.jsx'
-import CircularImageFrame from "../ImageCircle.jsx"
+import { useDarkMode } from '../../../contexts/DarkMode.jsx'
+import CircularImageFrame from "../common/ImageCircle.jsx"
 
 const UserWrapper = styled.div`
 display: flex;
