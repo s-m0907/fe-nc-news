@@ -23,10 +23,10 @@ const TopicDescription = styled.p`
 `;
 
 const Topic = ({ topic }) => {
-  if(topic) {
+  if(topic.hasOwnProperty('slug')) {
  return <TopicWrapper>
-    <TopicTitle>{topic.charAt(0).toUpperCase() + topic.slice(1)}</TopicTitle>
-    <TopicDescription>{topic.description}</TopicDescription>
+    <TopicTitle>{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</TopicTitle>
+    <TopicDescription/>
   </TopicWrapper>
   }
 };

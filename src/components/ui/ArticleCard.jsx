@@ -35,13 +35,15 @@ margin-right: 10px;
 margin-top: 5px;`
 
 const ArticleWrapper = styled.div`
-  border: solid black 2px;
-  border-radius: 20px;
-  background: transparent;
+  // border: solid black 2px;
+  border-radius: 2px;
+  background: rgba(191, 79, 116, 0.3);
   text-decoration: none;
   color: #444;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 10px;
+  max-height: 300px;
+  min-width: 80%;
   position: relative;
 
   ${props =>
@@ -56,15 +58,23 @@ display: flex;
 flex-direction: row;
 justify-content: start;
 align-items: stretch;
-flex-grow: inherit;
+flex-grow: inherit
+max-height: 300px;
 `
 
 const CardImg = styled.img`
 padding: 5px;
 width: 200px;
+max-width: 100%;
 height: auto;
+max-height: 300px;
+min-height: 100%;
+object-fit: contain;
+display: block;
+margin: 0 auto;
 margin-bottom: 2px;
-margin-right: 5px`
+margin-right: 5px;
+`
 
 const CardText = styled.div`
 display: flex;
@@ -104,7 +114,7 @@ const ArticleCard = ({article}) => {
             <CardImg src={article.article_img_url} alt=""/>
             <CardText>
                 <User><p className='user-post'><i className="fa-solid fa-user"></i> {article.author}</p></User>
-                <h2>{article.title}</h2>
+                <h3>{article.title}</h3>
                 <p>{articleAge}</p>
             </CardText>
         </FlexBox>
