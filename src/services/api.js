@@ -12,11 +12,11 @@ return ncNewsApi
 })
 }
 
-export const fetchArticles = (topic, sortBy, order) => {
+export const fetchArticles = (topic, sortBy, order, limit=50, p=1) => {
     return ncNewsApi
-    .get(`/articles?limit=40`, {params: {topic: topic, sort_by: sortBy, order: order}})
+    .get(`/articles?`, {params: {topic: topic, sort_by: sortBy, order: order, limit: limit, p: p}})
     .then((response) => {
-        return response.data.articles
+        return response.data
     })
 }
 

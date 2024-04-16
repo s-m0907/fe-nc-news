@@ -11,7 +11,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 position: relative;
-border: solid black 4px;
+border: solid #1f1f1f 4px;
 max-width: 100%;
 row-gap: 6px;
 align-items: start;
