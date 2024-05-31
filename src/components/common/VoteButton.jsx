@@ -2,10 +2,13 @@ import { useState } from "react"
 import { patchVotes } from "../../services/api"
 import styled from "styled-components"
 
-const likedStyle = {
-   background: "black",
-   color: "white"
-}
+const Button = styled.button`
+border: none;
+background: rgba(40, 40, 40, 0.1);
+padding: 4px;
+cursor: pointer;
+`
+
 
 const VoteButton = ({article_id, votes}) => {
    const [voteCount, setVoteCount] = useState(votes)
@@ -28,13 +31,13 @@ const handleClick = () => {
    setIsVoted(!isVoted);
 };
 
-   return <button
+   return <Button
    onClick = {() => {
       handleClick();
       
    }}>
       <i className={isVoted ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i> {voteCount}
-      </button>
+      </Button>
 }
 
 export default VoteButton

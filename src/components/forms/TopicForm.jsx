@@ -23,7 +23,7 @@ const Form = styled.form`
     display: block;
     width: 30%;
     padding: 10px;
-    background-color: #BF4F74;
+    background-color: #DE2B67;
     color: white;
     border: none;
     border-radius: 4px;

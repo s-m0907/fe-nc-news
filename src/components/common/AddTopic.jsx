@@ -7,8 +7,8 @@ border: none;
 border-radius: 20px;
 padding: 6px;
 margin-left: 8px;
-background: #BF4F74;
-color: whitesmoke;
+background: #DE2B67;
+color: white;
 padding-right: 8px;
 `
 

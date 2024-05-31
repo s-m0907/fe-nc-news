@@ -64,7 +64,7 @@ const SuccessMessage = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  background-color: #BF4F74;
+  background-color: #DE2B67;
   color: white;
   border: none;
   border-radius: 4px;
@@ -115,7 +115,7 @@ const SubmitButton = styled.button`
           <h3>Create a post:</h3>
         <FormGroup>
           <TopicWrapper>
-          <Label htmlFor="topic"></Label>
+          <Label htmlFor="topic" aria-label="Select a topic"></Label>
           <Select id="topic" {...register("topic", { required: true })}>
             {topics.map((topic) => (
               <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
@@ -125,18 +125,18 @@ const SubmitButton = styled.button`
           </TopicWrapper>
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="title"></Label>
+          <Label htmlFor="title" aria-label='article title'></Label>
           <Input id="title" placeholder="Title" {...register("title", { required: true })} />
           {errors.title && <ErrorMessage>This field is required</ErrorMessage>}
         </FormGroup>
   
         <FormGroup>
-          <Label htmlFor="body"></Label>
+          <Label htmlFor="body" aria-label='article text'></Label>
           <BodyInput id="body" placeholder="Text" {...register("body", { required: true })} />
           {errors.body && <ErrorMessage>This field is required</ErrorMessage>}
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="article_image_url"></Label>
+          <Label htmlFor="article_image_url" aria-label='article image url'></Label>
           <Input id="article_img_url" type="url" {...register("article_img_url")} placeholder="Image URL" />
         </FormGroup>
         {isSuccess && <SuccessMessage>Article posted!</SuccessMessage>}
