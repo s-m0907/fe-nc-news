@@ -5,6 +5,9 @@ import { useState } from "react";
 const Button = styled.button`
   color: #c70000;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background: rgba(0,0,0,0);
 `;
 const DeleteArticle = ({article_id, setIsDeleted}) => {
       const [isDisabled, setIsDisabled] = useState(false)

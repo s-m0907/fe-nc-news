@@ -12,70 +12,45 @@ const linkStyle = {
     flexWrap: "nowrap"
 };
 
-const SearchContainer = styled.div`
-    display: flex;
-    align-items: center;
-    position: relative;
-    flex-grow: 1;
-    margin-left: 15px;
-    margin-right: 15px;
-    `
-
-const SearchInput = styled.input`
-    flex-grow: 1;
-    padding: 8px 30px 8px 10px;
-    border: none;
-    border-radius: 4px;
-    width: 60%;
-`;
-
-const SearchIcon = styled.div`
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: #aaa;
-`;
-
 const PostArticleButton = styled.button`
-    padding: 8px 16px;
-    background-color: #BF4F74;
+    padding: 8px 10px;
+    background-color: #DE2B67;
     color: white;
     border: none;
     border-radius: 40px;
     cursor: pointer;
 `;
 
+const LeftContainer = styled.div`
+display: flex;
+justify-content: grow;
+`
+const RightContainer = styled.div`
+display: flex;
+justify-content: end;
+align-items: center;
+`
+
+
 const Header = () => {
     const { loggedInUser } = useContext(UserContext);
 
-    const handleSearchChange = (event) => {
-        console.log(`Search input changed: ${event.target.value}`);
-    };
-
-
     return (
         <header>
+            <LeftContainer>
             <LoggedIn loggedInUser={loggedInUser} />
-            <Link to='/' style={linkStyle}>
-                <h2><i className="fa-regular fa-newspaper fa-normal"/> NC News
+            </LeftContainer>
+            <Link to='/' style={linkStyle} value='Home'>
+                <h2>NC News <i className="fa-regular fa-newspaper fa-normal"/>
                 </h2>
             </Link>
-            <SearchContainer>
-                <SearchInput
-                    type="text"
-                    placeholder="Search..."
-                    onChange={handleSearchChange}
-                />
-                {/* Include the search icon */}
-                <SearchIcon><i className="fa-solid fa-magnifying-glass"></i></SearchIcon>
-            </SearchContainer>
-            <Link to='/create-post'><PostArticleButton>
+            <RightContainer>
+            <Link to='/create-post' aria-label="Create a new post"><PostArticleButton aria-label="New post" target="create a post">
             <i className="fa-solid fa-plus"/>
             </PostArticleButton>
             </Link>
             <Nav />
-            {/* Include the search bar component */}
+            </RightContainer>
         </header>
     );
 };

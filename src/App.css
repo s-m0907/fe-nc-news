@@ -185,10 +185,11 @@ margin-bottom: 20px;
 
 .sortbtn {
   margin-top: 15px;;
-  background-color: #BF4F74;
+  background-color: #DE2B67;
   color: white;
-  padding: 12px;
-  font-size: 18px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: bold;
   border: none;
   border-radius: 30px;
 }

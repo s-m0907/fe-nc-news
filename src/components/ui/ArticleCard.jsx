@@ -35,9 +35,8 @@ margin-right: 10px;
 margin-top: 5px;`
 
 const ArticleWrapper = styled.div`
-  // border: solid black 2px;
   border-radius: 2px;
-  background: rgba(191, 79, 116, 0.3);
+  background: rgba(230, 222, 222, 0.6);
   text-decoration: none;
   color: #444;
   padding: 10px;
@@ -49,7 +48,7 @@ const ArticleWrapper = styled.div`
   ${props =>
     props.darkMode &&
     css`
-      border-color: #ffffff;
+      background-color: rgba(0,0,0,0);
     `}
 `
 
@@ -120,10 +119,9 @@ const ArticleCard = ({article}) => {
         </FlexBox>
     </LinkStyle>
 <Actions>
+{ loggedInUser.username === article.author ? <DeleteArticle article_id={article.article_id} setIsDeleted={setIsDeleted}/> : <></>}
 <VoteButton article_id = {article.article_id} votes = {article.votes}/>
 <Link to={`/article/${article.article_id}`}><CommentButton comments = {article.comment_count}/></Link>
-{ loggedInUser.username === article.author ? <DeleteArticle article_id={article.article_id} setIsDeleted={setIsDeleted}/> : <></>
-}
     </Actions>
     </ArticleWrapper>
 )}
